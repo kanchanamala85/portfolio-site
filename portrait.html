@@ -78,7 +78,7 @@
             
         }
         .portrait{
-            height: 20rem;
+            height: 15rem;
         }
         .landscape{
             height: 12rem;
@@ -90,13 +90,25 @@
                 flex: 50%;
                 max-width: 50%;
             }
+            .portrait{
+                height: 20rem;
+            }
+            .landscape{
+            height: 12rem;
+            }
         }
 
         /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 500px) {
             .column {
                 flex: 100%;
                 max-width: 100%;
+            }
+            .portrait{
+                height: 25rem;
+            }
+            .landscape{
+                height: 15rem;
             }
         }
     </style>
