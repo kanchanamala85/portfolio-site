@@ -16,6 +16,8 @@ var c=0;
 1>Add Image number to corresponding lists by adding a comma and putting the number in '' quotes as shown.
 2> Images in Portrait orientation to portrait_imgs list.
 3> Images in Landscape orientation to landscape_imgs list. 
+
+To remove an image simply delete that number from the list.
 */
 var portrait_imgs=['1','2','4','5','6','8','9','12','14','15'];
 var landscape_imgs=['3','7','10','11','13'];
