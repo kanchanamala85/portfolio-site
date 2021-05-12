@@ -26,16 +26,25 @@ var landscape_imgs=['12'];
 
 for(i=0;i<portrait_imgs.length;i++){
     var im=document.createElement("img");
+    var dv=document.createElement("div");
+    var sp=document.createElement("span");
+    sp.innerText="This is a trial"
     im.setAttribute("class","materialboxed portrait");
+    dv.setAttribute("class","tooltip");
+    sp.setAttribute("class","tooltiptext");
     //im.setAttribute("class","");
     im.setAttribute("src",path+portrait_imgs[i]+'.jpg');
-    col_array_portrait[i%4].appendChild(im)
+    dv.appendChild(im);
+    dv.appendChild(sp);
+
+    col_array_portrait[i%4].appendChild(dv)
     c+=1;
 }
 c=0;
 for(i=0;i<landscape_imgs.length;i++){
     var im=document.createElement("img");
     im.setAttribute("class","materialboxed landscape");
+    im.setAttribute("title","This is a trial");
     //im.setAttribute("class","");
     im.setAttribute("src",path+landscape_imgs[i]+'.jpg');
     col_array_landscape[i%4].appendChild(im)
