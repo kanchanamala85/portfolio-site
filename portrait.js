@@ -9,7 +9,7 @@ var c7=document.getElementById('c7');
 var c8=document.getElementById('c8');
 var col_array_portrait=[c1,c2,c3,c4];
 var col_array_landscape=[c5,c6,c7,c8];
-var path="assets/portraits/portrait"
+var path="assets/portraits/"
 var c=0;
 
 //----------------------------Edit Only Here--------------------------
@@ -20,33 +20,78 @@ var c=0;
 
 To remove an image simply delete that number from the list.
 */
-var portrait_imgs=['1','2','3','4','5','6','7','8','9','10','11','13'];
-var landscape_imgs=['12'];
+var portrait_imgs=[
+                {
+                    name:"portrait1.jpg",
+                    description:"test"
+                },
+                {
+                    name:"portrait2.jpg",
+                    description:"test"
+                },
+                {
+                    name:"portrait3.jpg",
+                    description:"test"
+                },
+                {
+                    name:"portrait4.jpg",
+                    description:"test"
+                },
+                {
+                    name:"portrait5.jpg",
+                    description:"test"
+                },
+                {
+                    name:"portrait6.jpg",
+                    description:"test"
+                },
+                {
+                    name:"portrait7.jpg",
+                    description:"test"
+                },
+                {
+                    name:"portrait8.jpg",
+                    description:"test"
+                },
+                {
+                    name:"portrait9.jpg",
+                    description:"test"
+                },
+                {
+                    name:"portrait10.jpg",
+                    description:"test"
+                },
+                {
+                    name:"portrait11.jpg",
+                    description:"test"
+                },
+                {
+                    name:"portrait13.jpg",
+                    description:"test"
+                }
+            ];
+var landscape_imgs=[
+                {
+                    name:"portrait12.jpg",
+                    description:"test"
+                }
+            ];
 //--------------------------------------------------------------------
 
 for(i=0;i<portrait_imgs.length;i++){
     var im=document.createElement("img");
-    var dv=document.createElement("div");
-    var sp=document.createElement("span");
-    sp.innerText="This is a trial"
+    im.setAttribute("title",portrait_imgs[i].description);
     im.setAttribute("class","materialboxed portrait");
-    dv.setAttribute("class","tooltip");
-    sp.setAttribute("class","tooltiptext");
-    //im.setAttribute("class","");
-    im.setAttribute("src",path+portrait_imgs[i]+'.jpg');
-    dv.appendChild(im);
-    dv.appendChild(sp);
-
-    col_array_portrait[i%4].appendChild(dv)
+    im.setAttribute("src",path+portrait_imgs[i].name);
+    col_array_portrait[i%4].appendChild(im)
     c+=1;
 }
 c=0;
 for(i=0;i<landscape_imgs.length;i++){
     var im=document.createElement("img");
     im.setAttribute("class","materialboxed landscape");
-    im.setAttribute("title","This is a trial");
-    //im.setAttribute("class","");
-    im.setAttribute("src",path+landscape_imgs[i]+'.jpg');
+    im.setAttribute("title",landscape_imgs[i].description);
+    im.setAttribute("src",path+landscape_imgs[i].name);
     col_array_landscape[i%4].appendChild(im)
     c+=1;
 }

@@ -9,24 +9,86 @@ var c7=document.getElementById('c7');
 var c8=document.getElementById('c8');
 var col_array_portrait=[c1,c2,c3,c4];
 var col_array_landscape=[c5,c6,c7,c8];
-var path="assets/paintings/painting";
+var path="assets/paintings/";
 var c=0;
 //----------------------------Edit Only Here--------------------------
 /*
-1>Add Image number to corresponding lists by adding a comma and putting the number in '' quotes as shown.
+1> Add Image name an d description to corresponding lists by adding a comma and putting the number in the format as shown.
 2> Images in Portrait orientation to portrait_imgs list.
 3> Images in Landscape orientation to landscape_imgs list. 
 
-To remove an image simply delete that number from the list.
+To remove an image simply delete that entry from the list.
 */
-var portrait_imgs=['1','2','4','5','6','8','9','12','14','15'];
-var landscape_imgs=['3','7','10','11','13'];
+var portrait_imgs=[
+    {
+        name:"painting1.jpg",
+        description:"test"
+    },
+    {
+        name:"painting2.jpg",
+        description:"test"
+    },
+    {
+        name:"painting4.jpg",
+        description:"test"
+    },
+    {
+        name:"painting5.jpg",
+        description:"test"
+    },
+    {
+        name:"painting6.jpg",
+        description:"test"
+    },
+    {
+        name:"painting8.jpg",
+        description:"test"
+    },
+    {
+        name:"painting9.jpg",
+        description:"test"
+    },
+    {
+        name:"painting12.jpg",
+        description:"test"
+    },
+    {
+        name:"painting14.jpg",
+        description:"test"
+    },
+    {
+        name:"painting15.jpg",
+        description:"test"
+    },
+];
+var landscape_imgs=[
+    {
+        name:"painting3.jpg",
+        description:"test"
+    },
+    {
+        name:"painting7.jpg",
+        description:"test"
+    },
+    {
+        name:"painting10.jpg",
+        description:"test"
+    },
+    {
+        name:"painting11.jpg",
+        description:"test"
+    },
+    {
+        name:"painting13.jpg",
+        description:"test"
+    },
+];
 //--------------------------------------------------------------------
 for(i=0;i<portrait_imgs.length;i++){
     var im=document.createElement("img");
+    im.setAttribute("title",portrait_imgs[i].description);
     im.setAttribute("class","materialboxed portrait");
-    //im.setAttribute("class","");
-    im.setAttribute("src",path+portrait_imgs[i]+'.jpg');
+    im.setAttribute("src",path+portrait_imgs[i].name);
     col_array_portrait[i%4].appendChild(im)
     c+=1;
 }
@@ -34,8 +96,8 @@ c=0;
 for(i=0;i<landscape_imgs.length;i++){
     var im=document.createElement("img");
     im.setAttribute("class","materialboxed landscape");
-    //im.setAttribute("class","");
-    im.setAttribute("src",path+landscape_imgs[i]+'.jpg');
+    im.setAttribute("title",landscape_imgs[i].description);
+    im.setAttribute("src",path+landscape_imgs[i].name);
     col_array_landscape[i%4].appendChild(im)
     c+=1;
 }
